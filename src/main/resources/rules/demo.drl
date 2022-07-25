@@ -1,0 +1,10 @@
+package demo
+import com.xzh.drools.entity.DemoEntity
+
+rule "demo"
+    when
+        $demo:DemoEntity(name contains "小明")
+    then
+        $demo.setRemark("哈喽" + $demo.getName());
+        System.out.println("规则执行 ---> " + $demo.getRemark());
+end
